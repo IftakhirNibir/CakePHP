@@ -10,7 +10,7 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $name
- * @property \Cake\I18n\FrozenTime|null $created_at
+ * @property \Cake\I18n\FrozenTime|null $created
  * @property \Cake\I18n\FrozenTime|null $modified
  *
  * @property \App\Model\Entity\BlogPost[] $blog_posts
@@ -28,7 +28,7 @@ class Category extends Entity
      */
     protected $_accessible = [
         'name' => true,
-        'created_at' => true,
+        'created' => true,
         'modified' => true,
         'blog_posts' => true,
     ];

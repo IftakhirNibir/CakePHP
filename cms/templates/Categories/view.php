@@ -27,8 +27,8 @@
                     <td><?= $this->Number->format($category->id) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Created At') ?></th>
-                    <td><?= h($category->created_at) ?></td>
+                    <th><?= __('Created') ?></th>
+                    <td><?= h($category->created) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Modified') ?></th>
@@ -43,7 +43,6 @@
                         <tr>
                             <th><?= __('Id') ?></th>
                             <th><?= __('Name') ?></th>
-                            <th><?= __('Category Id') ?></th>
                             <th><?= __('Created') ?></th>
                             <th><?= __('Modified') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
@@ -52,7 +51,6 @@
                         <tr>
                             <td><?= h($blogPosts->id) ?></td>
                             <td><?= h($blogPosts->name) ?></td>
-                            <td><?= h($blogPosts->category_id) ?></td>
                             <td><?= h($blogPosts->created) ?></td>
                             <td><?= h($blogPosts->modified) ?></td>
                             <td class="actions">

@@ -23,10 +23,6 @@
                     <td><?= h($blogPost->name) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Category') ?></th>
-                    <td><?= $blogPost->has('category') ? $this->Html->link($blogPost->category->name, ['controller' => 'Categories', 'action' => 'view', $blogPost->category->id]) : '' ?></td>
-                </tr>
-                <tr>
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($blogPost->id) ?></td>
                 </tr>
@@ -39,6 +35,35 @@
                     <td><?= h($blogPost->modified) ?></td>
                 </tr>
             </table>
+            <div class="related">
+                <h4><?= __('Related Categories') ?></h4>
+                <?php if (!empty($blogPost->categories)) : ?>
+                <div class="table-responsive">
+                    <table>
+                        <tr>
+                            <th><?= __('Id') ?></th>
+                            <th><?= __('Name') ?></th>
+                            <th><?= __('Created') ?></th>
+                            <th><?= __('Modified') ?></th>
+                            <th class="actions"><?= __('Actions') ?></th>
+                        </tr>
+                        <?php foreach ($blogPost->categories as $categories) : ?>
+                        <tr>
+                            <td><?= h($categories->id) ?></td>
+                            <td><?= h($categories->name) ?></td>
+                            <td><?= h($categories->created) ?></td>
+                            <td><?= h($categories->modified) ?></td>
+                            <td class="actions">
+                                <?= $this->Html->link(__('View'), ['controller' => 'Categories', 'action' => 'view', $categories->id]) ?>
+                                <?= $this->Html->link(__('Edit'), ['controller' => 'Categories', 'action' => 'edit', $categories->id]) ?>
+                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Categories', 'action' => 'delete', $categories->id], ['confirm' => __('Are you sure you want to delete # {0}?', $categories->id)]) ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+                </div>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </div>

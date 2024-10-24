@@ -47,6 +47,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 'controller'=>'BlogPosts',
                 'action' => 'index'
             ]) ?>
+            <?= $this->Html->link('Meta-Field',[
+                'controller'=>'MetaFields',
+                'action' => 'index'
+            ]) ?>
         </div>
     </nav>
     <main class="main">

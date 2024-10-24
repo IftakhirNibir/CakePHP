@@ -24,7 +24,7 @@
                 <legend><?= __('Edit Blog Post') ?></legend>
                 <?php
                     echo $this->Form->control('name');
-                    echo $this->Form->control('category_id', ['options' => $categories]);
+                    echo $this->Form->control('categories._ids', ['options' => $categories]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

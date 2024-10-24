@@ -24,6 +24,7 @@ class CategoriesControllerTest extends TestCase
     protected $fixtures = [
         'app.Categories',
         'app.BlogPosts',
+        'app.BlogPostsCategories',
     ];
 
     /**
